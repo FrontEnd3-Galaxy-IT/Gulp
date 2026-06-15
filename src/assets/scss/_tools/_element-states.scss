@@ -1,0 +1,57 @@
+/*
+  Touch screens with fingers (primary touch input, no hover capability)
+  - (hover: none) = user cannot hover over elements (typical for phones/tablets)
+  - (pointer: coarse) = primary input is coarse (finger, not precise)
+  Use for: touch-only UX, larger tap targets, no hover effects
+*/
+@mixin touch() {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
+/*
+  Mouse with precise pointer (hover-capable primary input)
+  - (hover: hover) = user can hover over elements
+  - (pointer: fine) = primary input is precise (mouse, trackpad)
+  Use for: standard hover effects, small interactive elements, menus
+*/
+@mixin hover() {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+/*
+  Stylus input (precise pointer, no hover capability)
+  - (hover: none) = stylus input does not support hover
+  - (pointer: fine) = input is precise (stylus, pencil)
+  Use for: stylus-specific UX, drawing UI, precise interaction without hover
+*/
+@mixin stylus() {
+  @media (hover: none) and (pointer: fine) {
+    @content;
+  }
+}
+
+/*
+  Hybrid devices with ANY hover-capable input (even if primary is touch)
+  - (any-hover: hover) = at least one available input can hover (e.g., mouse on tablet)
+  Use for: safe hover effects on hybrid devices (touch + mouse), tablets with trackpad
+*/
+@mixin hybrid-hover() {
+  @media (any-hover: hover) {
+    @content;
+  }
+}
+
+/*
+  Hybrid devices with ANY fine-pointer input (even if primary is coarse)
+  - (any-pointer: fine) = at least one available input is precise (mouse on touch device)
+  Use for: precise interaction on hybrid devices, small elements when fine pointer is present
+*/
+@mixin hybrid-fine() {
+  @media (any-pointer: fine) {
+    @content;
+  }
+}

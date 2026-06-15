@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "./node_modules/prettier-plugin-twig-melody"
+  ],
+  "twigMelodyPlugins": [],
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "printWidth": 100,
+  "singleQuote": false,
+  "semi": false,
+  "tabWidth": 2,
+  "twigTabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false,
+  "twigPrintWidth": 100,
+  "singleAttributePerLine": true,
+  "bracketSameLine": false,
+  "twigAlwaysBreakObjects": false,
+  "twigSingleQuote": true,
+  "twigOutputEndblockName": true
+}

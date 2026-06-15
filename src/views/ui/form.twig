@@ -1,0 +1,27 @@
+{#
+class: string,
+name: string,
+value: string
+#}
+
+{% macro checkbox(params) %}
+  <span class="checkbox {{ params.class }}">
+    <input
+      class="checkbox__input js-checkbox-input"
+      type="checkbox"
+      name="{{ params.name }}"
+      value="{{ params.value }}" />
+    <span class="checkbox__custom"></span>
+  </span>
+{% endmacro %}
+
+{% macro radio(params) %}
+  <span class="checkbox {{ params.class }}">
+    <input
+      class="checkbox__input js-checkbox-input"
+      type="radio"
+      name="{{ params.name }}"
+      value="{{ params.value }}" />
+    <span class="checkbox__custom"></span>
+  </span>
+{% endmacro %}

@@ -1,0 +1,19 @@
+<div
+  class='modal js-modal important_none'
+  id="modal"
+>
+  <div class='modal__dialog'>
+    <div class='modal__header'>
+      <h2 class='modal__header-title'>
+        {# Write modal title here #}
+      </h2>
+      {{ btn.primary({
+        class: 'modal__header-close-btn js-modal-close-trigger',
+        inner: 'X',
+      }) }}
+    </div>
+    <div class='modal__body'>
+      {# Write modal content here #}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+:root {
+  //   === Colors
+  --white: #fff;
+  --black: #000;
+
+  //  === Fonts
+  --font-consolas: "Consolas", sans-serif;
+
+  //  === Topography
+  --font-primary: var(--font-consolas);
+  --font-size: 16px;
+
+  // === Theme settings
+  --bg-primary: var(--white);
+  --text-color-primary: var(--black);
+  --text-color-primary-hover: var(--black);
+
+  //  === Js variables
+  --current-scrollbar-width: 0px;
+  --header-height: 0px;
+}

@@ -1,0 +1,67 @@
+$iterate: 5;
+
+.pt-header-height {
+  padding-top: var(--header-height);
+}
+
+.p-0 {
+  padding: 0 ;
+}
+
+.pt-0 {
+  padding-top: 0 ;
+}
+
+.pe-0 {
+  padding-right: 0 ;
+}
+
+.pb-0 {
+  padding-bottom: 0 ;
+}
+
+.ps-0 {
+  padding-left: 0 ;
+}
+
+@for $i from 1 through $iterate {
+  .p-#{$i} {
+    padding: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .pt-#{$i} {
+    padding-top: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .pe-#{$i} {
+    padding-right: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .pb-#{$i} {
+    padding-bottom: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .ps-#{$i} {
+    padding-left: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .py-#{$i} {
+    padding-block: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .px-#{$i} {
+    padding-inline: #{$i}rem;
+  }
+}

@@ -1,0 +1,39 @@
+{#
+class?: string,
+items: [
+  {
+    title: string | HTMLElement,
+    content: string | HTMLElement
+  }
+]
+#}
+
+<div class='tabs js-tabs {{ class }}'>
+  <div class='tabs__head'>
+    <div class='tabs__head-row'>
+      {% for index, item in items %}
+        <div class='tabs__head-col'>
+          <button
+            class="btn primary-btn tabs__btn js-tab-btn"
+            data-tab-id='{{ index ~ '_' ~ item.title | striptags | lower | replace({' ': '_'}) }}'
+            aria-label='{{ item.title | striptags }}'
+          >
+            {{ item.title }}
+          </button>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <hr>
+  <div class='tabs__body'>
+    {% for index, item in items %}
+      <div
+        id='{{ index ~ '_' ~ item.title | striptags | lower | replace({' ': '_'}) }}'
+        class="tabs__item js-tabs-item"
+      >
+        <h3>{{ item.title }}</h3>
+        {{ item.content }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

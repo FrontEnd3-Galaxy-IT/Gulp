@@ -1,0 +1,24 @@
+.row {
+  --gutter-x: 0.5rem;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  width: calc(100% + calc(var(--gutter-x) * 2));
+  margin-right: calc(var(--gutter-x) * -1);
+  margin-left: calc(var(--gutter-x) * -1);
+}
+
+.row > * {
+  padding-right: var(--gutter-x);
+  padding-left: var(--gutter-x);
+}
+
+.col-fill {
+  flex-grow: 1;
+}
+
+.col-fit {
+  width: fit-content;
+}

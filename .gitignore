@@ -1,0 +1,22 @@
+# Build
+/build
+
+# Dependencies
+/node_modules
+package-lock.json
+
+# Cache
+/.gulp
+/.husky
+
+# Archives
+/*.zip
+/*.rar
+
+# IDE
+/.idea
+/.vscode
+
+# Other
+.DS_Store
+.vscode

@@ -1,0 +1,18 @@
+{
+  "name": "Galaxy IT",
+  "short_name": "Galaxy IT",
+  "start_url": ".",
+  "id": "/h/test",
+  "display": "fullscreen",
+  "background_color": "#88BCF9",
+  "theme_color": "#B458EC",
+  "description": "The best IT company, now it is from USA. USA is dream, so Galaxy IT - it's dream :D",
+  "related_applications": [],
+  "permissions": ["gcm"],
+  "gcm_sender_id": "",
+  "gcm_user_visible_only": true,
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "scope": "/"
+}

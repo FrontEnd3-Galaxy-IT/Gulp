@@ -1,0 +1,50 @@
+{#
+class?: string,
+name: string,
+holder: string,
+devaultValue?: string,
+options: [
+  {
+    title: string,
+    href: string ,
+    value: string
+  }
+]
+#}
+
+<div class="dropdown js-select {{ class }}">
+  <input
+    class="field__input js-select-input"
+    id="{{ name }}"
+    type="hidden"
+    name="{{ name }}"
+    value="{{ devaultValue }}"
+  />
+  <button
+    class="dropdown__trigger js-select-trigger"
+    type="button"
+    aria-label="{{ holder | striptags }}"
+  >
+    <span
+      class="dropdown__trigger-value js-select-trigger-value"
+    >
+      {{ holder }}
+    </span>
+  </button>
+  <div class="dropdown__item js-select-dropdown">
+    <ul>
+      {% for option in options %}
+        <li>
+          <button
+            class="js-select-option"
+            type="button"
+            data-select-value="{{ option.value }}"
+            aria-label="{{ option.title | striptags }}"
+          >
+            {{ option.title }}
+          </button>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

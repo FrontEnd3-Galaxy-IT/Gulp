@@ -1,0 +1,31 @@
+{#
+title: string,
+name: string,
+
+class?: string,
+type?: string, - options is "text"
+fieldType?: string, - options is "empty"
+isRequired?: boolean, - options is "false"
+error: string, - required if "isRequired" is true
+placeholder?: string,
+fieldAttr?: string,
+inputAttr?: string
+#}
+<div
+  class="form-field {{ class }} {{ isRequired == true ? 'is-required' : '' }} js-field"
+  data-type="{{ fieldType ? fieldType : 'empty' }}"
+>
+  <label for="{{ name }}" class="form-field__title">{{ title }}</label>
+  <input
+    class="form-field__input js-field-input"
+    id="{{ name }}"
+    type="{{ type ? type : 'text' }}"
+    name="{{ name }}"
+    value="{{ defaultValue }}"
+    placeholder="{{ placeholder }}"
+    {{ inputAttr }}
+  />
+  {% if isRequired %}
+    <span class="form-field__error js-field-error">{{ error }}</span>
+  {% endif %}
+</div>

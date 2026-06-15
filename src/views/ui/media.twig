@@ -1,0 +1,130 @@
+{# Icons #}
+{% macro icon(name, mod) %}
+  <svg class="icon icon-{{ name }} {{ mod }}">
+    <use href="./icon/icons/icons.svg#{{ name }}" />
+  </svg>
+{% endmacro %}
+{# Icons end #}
+
+{# Images #}
+{% macro img(link, format, parent, width, height) %}
+  <picture class="{{ parent }}__image">
+    <source srcset="./img/{{ link }}.webp" type="image/webp" class="{{ parent }}__img" />
+    <img src="./img/{{ link }}.{{ format }}"
+      alt="img"
+      class="{{ parent }}__img"
+      width="{{ width }}"
+      height="{{ height }}" />
+  </picture>
+{% endmacro %}
+
+{# Advanced images =D #}
+{#
+params = {
+  class: string - additional class for image
+  src: string - path to image without extname
+  alt: string - custom alternative value 
+  width: string | number - size of origin image
+  height: string | number - size of origin image
+  webp: boolean - if "false" will be rendered just <img /> tag
+}
+#}
+{% macro image(params, parent) %}
+  {% set image_path_array = params.src|split('/') %}
+  {% set image_name = params.alt ?? image_path_array[image_path_array.length - 1] %}
+
+  {% if params.webp == false %}
+    <img src="./img/content/{{ params.src }}"
+      alt="{{ image_name }}"
+      class="{{ parent }}__img {{ params.class ?? '' }}"
+      width="{{ params.width }}"
+      height="{{ params.height }}" />
+  {% else %}
+    {% set src_to_webp =
+      params.src|replace({ '.jpg': '.webp', '.jpeg': '.webp', '.png': '.webp', '.svg': '.webp' })
+    %}
+
+    <picture class="{{ params.class ?? '' }} {{ parent }}__image">
+      <source srcset="./img/content/{{ src_to_webp }}"
+        type="image/webp"
+        class="{{ parent }}__img" />
+      <img src="./img/content/{{ params.src }}"
+        alt="{{ image_name }}"
+        class="{{ parent }}__img"
+        width="{{ params.width }}"
+        height="{{ params.height }}" />
+    </picture>
+  {% endif %}
+{% endmacro %}
+
+{# Videos #}
+{#
+@params: {
+  sources: [
+    {
+      src: string,
+      type: string
+    }
+  ],
+  width: number,
+  height: number,
+
+  id?: string,
+  class?: string,
+  poster?: string,
+  attr?: string
+}
+#}
+{% macro video(params) %}
+  <video id="{{ params.id }}"
+    class="{{ params.class }}"
+    src="{{ params.src }}.{{ params.format }}"
+    width="{{ params.width }}"
+    height="{{ params.height }}"
+    poster="{{ params.poster ? './img/' ~ params.poster : '' }}"
+    {{ params.attr }}>
+    {% for item in params.sources %}
+      <source src="./video/{{ item.src }}" type="video/{{ item.type }}" />
+    {% endfor %}Your browser doesn't support HTML5 video tag.
+  </video>
+{% endmacro %}
+{# Videos end #}
+
+{# Videos for background #}
+{#
+@params: {
+  sources: [
+    {
+      src: string,
+      type: string,
+      mw: string,
+    }
+  ],
+  width: number,
+  height: number,
+  id: string,
+
+  class?: string,
+  poster?: string,
+  attr?: string
+}
+#}
+{% macro videoBg(params) %}
+  <video id="{{ params.id }}"
+    class="{{ params.class }} js-responce-video"
+    src="{{ params.src }}.{{ params.format }}"
+    width="{{ params.width }}"
+    height="{{ params.height }}"
+    poster="{{ params.poster ? './img/' ~ params.poster : '' }}"
+    autoplay
+    loop
+    muted
+    playsinline>
+    {% for item in params.sources %}
+      <source data-src="./video/{{ item.src }}"
+        data-mw="{{ item.mw }}"
+        type="video/{{ item.type }}" />
+    {% endfor %}
+  </video>
+{% endmacro %}
+{# Videos for background end #}

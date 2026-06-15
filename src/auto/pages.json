@@ -1,0 +1,14 @@
+[
+  {
+    "name": "404",
+    "path": "./404.html"
+  },
+  {
+    "name": "email-example",
+    "path": "./email-example.html"
+  },
+  {
+    "name": "galaxyit-sprite-showcase",
+    "path": "./icon/stack/galaxyit-sprite-showcase.html"
+  }
+]

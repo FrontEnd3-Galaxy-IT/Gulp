@@ -1,0 +1,34 @@
+{# Primary btn #}
+{#
+@params: {
+  inner: string,
+
+  class?: string,
+  type?: string, - options 'button',
+  attr?: data attributes
+}
+#}
+{% macro primary(params) %}
+  <button
+    class="btn primary-btn {{ params.class }}"
+    type='{{ params.type ? params.type : "button" }}'
+    {{ params.attr }}
+  >
+    {{ params.inner }}
+  </button>
+{% endmacro %}
+{# Primary btn end #}
+
+{# Primary btn #}
+{% macro burger(class) %}
+  <button
+    class="burger-btn {{ class }}"
+    type="button"
+    aria-label='Navigation menu button'
+  >
+    <i></i>
+    <i></i>
+    <i></i>
+  </button>
+{% endmacro %}
+{# Primary btn end #}

@@ -1,0 +1,17 @@
+{# Primary btn #}
+{#
+@params: {
+  class: string,
+  href: string, - options '#'
+  inner: string
+}
+#}
+{% macro primary(params) %}
+  <a
+    class="btn primary-btn {{ params.class }}"
+    href='{{ params.href ? params.href : '#' }}'
+  >
+    {{ params.inner }}
+  </a>
+{% endmacro %}
+{# Primary btn end #}

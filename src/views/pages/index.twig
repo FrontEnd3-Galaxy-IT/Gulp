@@ -1,0 +1,21 @@
+{% extends 'layouts/main/layout-main.twig' %}
+
+{% block variables %}
+  {% set title = meta.title %}
+  {% set page_class = 'index-page' %}
+{% endblock variables %}
+
+{% block content %}
+
+  {{ include_module('home-page/hero') }}
+  {{ include_module('hero') }}
+
+{% endblock content %}
+
+{% block modals %}
+
+{% endblock modals %}
+
+{% block scripts %}
+
+{% endblock scripts %}

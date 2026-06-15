@@ -1,0 +1,24 @@
+.dropdown {
+  position: relative;
+
+  // &__trigger {
+  // }
+
+  &__item {
+    pointer-events: none;
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition-timing-function: ease;
+    transition-duration: .5s;
+    transition-property: opacity, visibility;
+
+    &._active {
+      pointer-events: all;
+      visibility: visible;
+
+      opacity: 1;
+    }
+  }
+}

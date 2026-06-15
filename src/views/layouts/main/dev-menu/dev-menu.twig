@@ -1,0 +1,36 @@
+{% set menu = auto('pages') %}
+
+<div class="dev-menu">
+	<ul class="dev-menu-list">
+		<li class="dev-menu-item">
+			<a class="dev-menu-link" href="./" title="Shift+Ctrl+H">
+				🏠︎ Home
+			</a>
+		</li>
+
+		<li class="dev-menu-item">
+			<a class="dev-menu-link" href="./icon/stack/galaxyit-sprite-showcase.html" title="Shift+Ctrl+S">
+				🖼️ Icons sprite
+			</a>
+		</li>
+
+		{% for index, page in menu %}
+			{% if page.name != 'index' %}
+				<li class="dev-menu-item">
+					<a class="dev-menu-link" href="{{ page.path }}">
+						{{ index + 1 }}. {{ page.name|replace({ '-': ' ', '_': ' ', '.': ' ' }) }}
+					</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<button type="button" class="dev-menu-toggler" aria-label="Developer menu">
+		<i></i>
+	</button>
+</div>
+<script>
+	{% include './dev-menu.js' %}
+</script>
+<style>
+	{% include './dev-menu.css' %}
+</style>

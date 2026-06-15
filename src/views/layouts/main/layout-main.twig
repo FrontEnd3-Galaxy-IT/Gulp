@@ -1,0 +1,47 @@
+{% import 'ui/media.twig' as media %}
+{% import 'ui/buttons.twig' as btn %}
+{% import 'ui/links.twig' as link %}
+{% import 'ui/form.twig' as form %}
+{% block variables %}
+
+{% endblock variables %}
+
+{% set layout_components_path = 'layouts/main/components/' %}
+{% set layout_modules_path = 'layouts/main/modules/' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  {% include layout_modules_path ~ 'head.twig' %}
+
+  <body class="{{ page_class }}">
+    <div class="wrapper">
+      {% include layout_modules_path ~ 'header.twig' %}
+
+      <div class="content pt-header-height">
+        {% block content %}
+
+        {% endblock content %}
+      </div>
+
+      {% include layout_modules_path ~ 'footer.twig' %}
+
+      {% include layout_components_path ~ 'modals/modal.twig' %}
+      {% block modals %}
+
+      {% endblock modals %}
+    </div>
+
+    <script>
+      {% include 'layouts/main/scripts/register-worker.js' %}
+    </script>
+
+    <script src="./js/main.js"></script>
+    {% if prod != true %}
+      {% include 'layouts/main/dev-menu/dev-menu.twig' %}
+    {% endif %}
+
+    {% block scripts %}
+
+    {% endblock scripts %}
+  </body>
+</html>

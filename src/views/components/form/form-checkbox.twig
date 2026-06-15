@@ -1,0 +1,24 @@
+{#
+checkbox: using the same params as checkbox in "ui/form -> checkbox macros",
+message: string,
+
+isRequired?: boolean, - options is "false"
+error: string, - required if "isRequired" is true
+#}
+<div
+  class="form-field {{ class }} {{ isRequired == true ? 'is-required' : '' }} js-field"
+  data-type="checkbox"
+>
+  <div class="form-field__row">
+    <div class="form-field__col">
+      {{ form.checkbox(checkbox) }}
+    </div>
+    <div class="form-field__col">
+      {{ message }}
+    </div>
+  </div>
+
+  {% if isRequired %}
+    <span class="form-field__error js-field-error">{{ error }}</span>
+  {% endif %}
+</div>

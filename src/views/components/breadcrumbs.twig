@@ -1,0 +1,24 @@
+{#
+class: string,
+items: [
+  {
+  title: string | HTMLElement,
+  href: string
+  }
+]
+#}
+
+<div class="breadcrumbs {{ class }}">
+  <ul class="breadcrumbs__list">
+    {% for item in items %}
+      <li class="breadcrumbs__item">
+        <a
+          class="breadcrumbs__link"
+          href="{{ item.href }}"
+        >
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

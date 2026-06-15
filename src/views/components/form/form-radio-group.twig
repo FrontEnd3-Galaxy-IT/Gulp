@@ -1,0 +1,40 @@
+{#
+title: string,
+name: string,
+items: [
+  {
+    title: string,
+    value: string
+  }
+],
+
+class?: string,
+isRequired?: boolean, - options is "false",
+error: string, - required if "isRequired" is true
+#}
+<div class="form-field js-field {{ class }} {{ isRequired == true ? 'is-required' : '' }}"
+     data-type="radio-group">
+  <fieldset class="radio-group">
+    <legend class="radio-group__title">
+      {{ title }}
+    </legend>
+    <div class="radio-group__list js-radio-group">
+      {% for item in items %}
+        <label class="radio-group__item">
+            <span class="radio">
+              <input
+                class="radio__input js-radio-input"
+                type="radio"
+                name="{{ name }}"
+                value="{{ item.value }}" />
+              <span class="radio__custom"></span>
+            </span>
+          <span class='radio-group__item-name'>{{ item.title }}</span>
+        </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+  {% if isRequired %}
+    <span class="form-field__error js-field-error">{{ error }}</span>
+  {% endif %}
+</div>

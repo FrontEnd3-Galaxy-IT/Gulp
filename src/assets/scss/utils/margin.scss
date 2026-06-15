@@ -1,0 +1,87 @@
+$iterate: 5;
+
+.mt-header-height {
+  margin-top: var(--header-height);
+}
+
+.m-0-auto {
+  margin: 0 auto;
+}
+
+.m-auto-0 {
+  margin: auto 0;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.ms-auto {
+  margin-left: auto;
+}
+
+.me-auto {
+  margin-right: auto;
+}
+
+.m-0 {
+  margin: 0 ;
+}
+
+.mt-0 {
+  margin-top: 0 ;
+}
+
+.me-0 {
+  margin-right: 0 ;
+}
+
+.mb-0 {
+  margin-bottom: 0 ;
+}
+
+.ms-0 {
+  margin-left: 0 ;
+}
+
+@for $i from 1 through $iterate {
+  .m-#{$i} {
+    margin: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .mt-#{$i} {
+    margin-top: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .me-#{$i} {
+    margin-right: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .mb-#{$i} {
+    margin-bottom: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .ms-#{$i} {
+    margin-left: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .my-#{$i} {
+    margin-block: #{$i}rem;
+  }
+}
+
+@for $i from 1 through $iterate {
+  .mx-#{$i} {
+    margin-inline: #{$i}rem;
+  }
+}

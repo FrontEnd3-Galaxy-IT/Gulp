@@ -1,0 +1,46 @@
+{
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true,
+    "es6": true
+  },
+  "ignorePatterns": [
+    "gulp/*.*",
+    "build/*.*",
+    "**/*.config.js"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.js"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "prettier"
+      ],
+      "rules": {
+        "no-unused-vars": "warn",
+        "no-dupe-keys": "warn",
+        "no-dupe-args": "warn",
+        "no-useless-escape": "off",
+        "indent": [
+          "error",
+          2,
+          {
+            "SwitchCase": 1
+          }
+        ],
+        "semi": [
+          "error",
+          "never"
+        ],
+        "quotes": [
+          "warn",
+          "double"
+        ]
+      }
+    }
+  ]
+}
