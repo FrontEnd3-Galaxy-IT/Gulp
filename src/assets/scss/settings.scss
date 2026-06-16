@@ -20,6 +20,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -54,7 +55,7 @@ p {
 }
 
 a {
-  color: black;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -64,6 +65,7 @@ a:hover {
 
 button {
   padding: 0;
+  font-family: inherit;
 
   cursor: pointer;
 
@@ -96,6 +98,12 @@ textarea {
   color: inherit;
 }
 
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   margin: 0;
@@ -118,21 +126,10 @@ fieldset {
   border-image: none;
 }
 
-// audio::-webkit-media-controls-panel {}
-// audio::-webkit-media-controls-mute-button {}
-// audio::-webkit-media-controls-play-button {}
-// audio::-webkit-media-controls-timeline-container {}
-// audio::-webkit-media-controls-current-time-display {}
-// audio::-webkit-media-controls-time-remaining-display {}
-// audio::-webkit-media-controls-timeline {}
-// audio::-webkit-media-controls-volume-slider-container {}
-// audio::-webkit-media-controls-volume-slider {}
-// audio::-webkit-media-controls-seek-back-button {}
-// audio::-webkit-media-controls-seek-forward-button {}
-// audio::-webkit-media-controls-fullscreen-button {}
-// audio::-webkit-media-controls-rewind-button {}
-// audio::-webkit-media-controls-return-to-realtime-button {}
-// audio::-webkit-media-controls-toggle-closed-captions-button {}
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 .wrapper {
   position: relative;
@@ -150,14 +147,13 @@ fieldset {
   z-index: 500;
 
   flex: 1 0 auto;
-
-  overflow: hidden;
 }
 
 .container {
-  max-width: px(1440);
-  padding-right: 15px;
-  padding-left: 15px;
+  width: 100%;
+  max-width: 1400px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin: 0 auto;
 }
 
@@ -167,5 +163,5 @@ fieldset {
 }
 
 .important_none {
-  display: none ;
+  display: none;
 }

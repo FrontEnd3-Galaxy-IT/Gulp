@@ -1,22 +1,90 @@
-.header {
+.site-header {
+  position: relative;
+  z-index: 50;
   width: 100%;
-  height: 10vh;
+  padding-top: 20px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
 
-  background-color: $gray;
+    padding: 12px 20px;
 
-  @include xs {
-    height: 30vh;
+    background: linear-gradient(113deg, rgba(255, 255, 255, 0.57) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 99px;
+
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
   }
 
-  /* For fixed header */
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // z-index: 1100;
-  // padding: 0 calc(var(--current-scrollbar-width) + 0) 0 0;
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
 
-  // &._hide {
-    // }
-    // &__row {
-  // }
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #000000;
+      border-radius: 2px;
+    }
+  }
+
+  &__drawer {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 20px;
+    right: 20px;
+    z-index: 100;
+
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 20px;
+
+    background: linear-gradient(113deg, rgba(255, 255, 255, 0.67) 0%, rgba(255, 255, 255, 0.4) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
+
+    &.is-open {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 951px) {
+    &__nav,
+    &__actions {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+    }
+  }
 }

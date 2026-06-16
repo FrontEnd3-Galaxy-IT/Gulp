@@ -1,5 +1,6 @@
 //  Icons
 @use './icons';
+@use './icon';
 
 //  Topography
 @use './topography/tags';
@@ -8,6 +9,10 @@
 
 //  Links
 @use './links';
+@use './logo';
 
 //  Buttons
 @use './buttons';
+
+//  Badge
+@use './badge';

@@ -1,0 +1,20 @@
+.outlined-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 19px;
+  border-radius: 99px;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  background: transparent;
+
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    color: #fff;
+    background: $color-primary;
+  }
+}

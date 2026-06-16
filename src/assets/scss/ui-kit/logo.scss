@@ -1,0 +1,22 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+
+  img {
+    display: block;
+    height: auto;
+  }
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  color: #18181b;
+  transition: 0.2s;
+
+  &:hover {
+    color: $color-primary;
+  }
+}

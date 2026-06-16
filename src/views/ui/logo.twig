@@ -1,0 +1,12 @@
+{% macro render(params) %}
+  {% set src = params.src | default('img/content/Logo.png') %}
+  {% set href = params.href | default('/') %}
+  <a class="logo" href="{{ href }}" aria-label="Home">
+    <img
+      src="{{ src }}"
+      alt="Logo"
+      width="{{ params.width | default(175) }}"
+      height="{{ params.height | default(35) }}"
+    >
+  </a>
+{% endmacro %}

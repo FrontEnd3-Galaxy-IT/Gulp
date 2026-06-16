@@ -1,0 +1,15 @@
+{# Main organism — site header overlay + hero section with background, title and search #}
+
+<section class="main-hero">
+    {% include 'layouts/main/modules/header.twig' %}
+  <div class="container">
+    <div class="main-hero__inner">
+      <h1 class="main-hero__title">{{ title | default('Run Your Business') }}</h1>
+      <p class="main-hero__subtitle">{{ subtitle | default('Find better suppliers. Secure real contracts. Build lasting partnerships.') }}</p>
+
+      <div style='width:100%;display:flex' >{% include 'components/search.twig' %}</div>
+
+      <span class="main-hero__text">{{ counter | default('480.000+ Available Contracts Listed') }}</span>
+    </div>
+  </div>
+</section>

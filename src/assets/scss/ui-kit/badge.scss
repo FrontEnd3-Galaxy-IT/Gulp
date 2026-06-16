@@ -1,0 +1,28 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px;
+  border-radius: 99px;
+
+  font-size: 13px;
+  white-space: nowrap;
+
+  &--default {
+    border: 1px solid #235dfc;
+    color: #235dfc;
+    background: transparent;
+  }
+
+  &--verified {
+    border: 1px solid $color-success;
+    color: $color-success;
+    background: transparent;
+  }
+
+  &--info {
+    border: 1px solid #235dfc;
+    color: #fff;
+    background: #235dfc;
+  }
+}

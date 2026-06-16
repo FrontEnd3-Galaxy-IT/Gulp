@@ -1,0 +1,15 @@
+{% import 'ui/buttons.twig' as btn %}
+
+<form class="search-form js-search-form {{ class }}" role="search" action="search.html" method="get">
+  <div class="search-form__icon">
+    <img src="img/content/main/search/search.png" alt="" width="20" height="20">
+  </div>
+  <input
+    class="search-form__input"
+    type="text"
+    name="query"
+    autocomplete="off"
+    value="{{ initialValue }}"
+  >
+  {{ btn.primary({ inner: 'Search', type: 'submit', class: 'search-form__submit' }) }}
+</form>

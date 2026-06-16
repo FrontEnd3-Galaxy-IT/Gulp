@@ -1,4 +1,36 @@
-<header class="header">
+{% import 'ui/logo.twig' as logo %}
+
+<header class="site-header js-site-header">
   <div class="container">
+    <div class="site-header__inner">
+      {{ logo.render({ href: 'index.html' }) }}
+
+      <nav class="site-header__nav">
+        <a class="nav-link js-nav-link" href="index.html">Home</a>
+        <a class="nav-link js-nav-link" href="index.html#how-it-works">How It Works</a>
+        <a class="nav-link js-nav-link" href="index.html#latest-contracts">Latest Contracts Post</a>
+        <a class="nav-link js-nav-link">People Loved us!</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="nav-link" href="#">Login</a>
+        <button type="button" class="btn outlined-btn">Sign Up</button>
+      </div>
+
+      <button class="site-header__burger js-burger-btn" type="button" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="site-header__drawer js-burger-drawer">
+    <a class="nav-link js-nav-link" href="index.html">Home</a>
+    <a class="nav-link js-nav-link" href="index.html#how-it-works">How It Works</a>
+    <a class="nav-link js-nav-link" href="index.html#latest-contracts">Latest Contracts Post</a>
+    <a class="nav-link js-nav-link">People Loved us!</a>
+    <button type="button" class="btn outlined-btn">Login</button>
+    <button type="button" class="btn primary-btn">Sign Up</button>
   </div>
 </header>

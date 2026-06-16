@@ -19,6 +19,10 @@ export const twigFunctions = [
       ),
   },
   {
+    name: "module_data",
+    func: (fileName) => loadModuleData(fileName),
+  },
+  {
     name: "include_module",
     func: (fileName) => {
       const moduleData = loadModuleData(fileName)

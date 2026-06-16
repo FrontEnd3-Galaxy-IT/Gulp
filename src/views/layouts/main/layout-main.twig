@@ -15,7 +15,7 @@
 
   <body class="{{ page_class }}">
     <div class="wrapper">
-      {% include layout_modules_path ~ 'header.twig' %}
+        {% include layout_modules_path ~ 'main.twig' with module_data('main') %}
 
       <div class="content pt-header-height">
         {% block content %}
@@ -36,9 +36,6 @@
     </script>
 
     <script src="./js/main.js"></script>
-    {% if prod != true %}
-      {% include 'layouts/main/dev-menu/dev-menu.twig' %}
-    {% endif %}
 
     {% block scripts %}
 
