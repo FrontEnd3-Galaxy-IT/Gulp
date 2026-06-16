@@ -1,0 +1,18 @@
+{# How It Works organism — three steps #}
+{% import 'ui/badge.twig' as badge %}
+
+<section id="how-it-works" class="how">
+  <div class="container">
+    <h2 class="how__title">How It Works</h2>
+    <p class="how__subtitle">Applying for an agreement/contract</p>
+    <div class="how__list">
+      {% for step in steps %}
+        <article class="how__item" style="background-image: url('img/content/how/{{ step.image }}');">
+          {{ badge.render({ inner: step.badge, variant: 'info' }) }}
+          <p class="how__item-name">{{ step.title }}</p>
+          <span class="how__item-description">{{ step.description }}</span>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
