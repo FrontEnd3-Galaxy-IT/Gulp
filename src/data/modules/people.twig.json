@@ -1,0 +1,45 @@
+{
+  "items": [
+    {
+      "text": "I was impressed by how simple and intuitive the whole process was. Everything worked smoothly, and I felt supported at every step.",
+      "name": "Peter Kenvod",
+      "company": "Amazon",
+      "img": "img/content/people/avatar/Avatar1.png",
+      "type": "comment"
+      
+    },
+        {
+      "text": "Finally, a service I can actually trust. Clear communication, fast responses, and the result was exactly what I needed.",
+      "name": "Carol M.",
+      "company": "Microsoft Inc.",
+      "img": "img/content/people/avatar/Avatar2.png",
+      "type": "comment"
+    },
+    {
+      "title": "85%",
+      "subtitle": "Hire Rate",
+      "bg": "img/content/people/bg1.png",
+      "type": "info"
+    },
+    {
+      "title": "10,000+",
+      "subtitle": "Successful contracts",
+      "bg": "img/content/people/bg2.png",
+      "type": "info"
+    },
+    {
+      "text": "I had a great experience. The onboarding was fast, and I appreciated the extra focus on security and trust.",
+      "name": "Martha",
+      "company": "Unicell Corporation",
+      "img": "img/content/people/avatar/Avatar3.png",
+      "type": "comment"
+    },
+    {
+      "text": "Using this platform saved me so much time and effort. I didn’t have to worry about misunderstandings—the process was transparent and easy to follow.",
+      "name": "Timothy Donald Cook",
+      "company": "Apple",
+      "img": "img/content/people/avatar/Avatar4.png",
+      "type": "comment"
+    }
+  ]
+}

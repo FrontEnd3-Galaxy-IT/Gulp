@@ -1,0 +1,20 @@
+<article {% if item.type == "info" %}style="background-image:url({{item.bg}})"{% endif %}  class="people__item">
+{% if item.type == "comment" %}
+  <div class="people__item--inner">
+    <img src="img/content/people/comma.png" alt="comma">
+    <p class="people__item-text">{{ item.text }}</p>
+  </div>
+  <div class="people__item-person">
+    <img src="{{ item.img }}" alt="{{ item.name }}">
+    <div class="people__item--bottom">
+      <span class="people__item--name">{{ item.name }}</span>
+      <span class="people__item--company">{{ item.company }}</span>
+    </div>
+  </div>
+{% else %}
+<div class="people__item--info">
+  <p class="people__item--info--title">{{ item.title }}</p>
+  <span class="people__item--info--subtitle">{{ item.subtitle }}</span>
+</div>
+{% endif %}
+</article>

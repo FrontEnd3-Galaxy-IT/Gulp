@@ -1,0 +1,54 @@
+.people {
+  &__title {
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+
+    @include sm {
+      font-size: 38px;
+      line-height: 50px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    opacity: 0.5;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    &:first-child,
+    &:last-child {
+      grid-column: span 2;
+
+      @include sm {
+        grid-column: span 1;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    &:not(:first-child):not(:last-child) {
+      aspect-ratio: 1 / 1;
+
+      @include sm {
+      }
+    }
+  }
+}

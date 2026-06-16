@@ -1,0 +1,11 @@
+<section id="people" class="people">
+  <div class="container">
+    <h2 class="people__title">People Loved us!</h2>
+    <p class="people__subtitle">With over 10,000 users served. Here's what they say.</p>
+    <div class="people__list">
+      {% for item in items %}
+        {% include 'components/people-comment.twig' with { item: item } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
