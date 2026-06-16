@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "id": "it-contractor", "name": "I.T Contractor", "icon": "1.png" },
+    { "id": "content-writer", "name": "Content Writer", "icon": "2.png" },
+    { "id": "accountancy", "name": "Accountancy", "icon": "3.png" },
+    { "id": "banking", "name": "Banking", "icon": "4.png" },
+    { "id": "digital-creative", "name": "Digital & Creative", "icon": "5.png" },
+    { "id": "marketing-pr", "name": "Marketing & PR", "icon": "6.png" }
+  ]
+}

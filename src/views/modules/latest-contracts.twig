@@ -1,0 +1,25 @@
+{# Latest Contracts organism — title, tabs and contract cards #}
+{% set tabsData = json('tabs') %}
+{% set contractsData = json('contracts') %}
+{% set activeTabId = activeTabId | default(tabsData.items[0].id) %}
+
+<section id="latest-contracts" class="latest js-latest" data-active-tab="{{ activeTabId }}">
+  <div class="container">
+    <div class="latest__head">
+      <h2 class="latest__title">Latest Contracts Post</h2>
+      <p class="latest__subtitle">Search and connect with the right companies faster</p>
+    </div>
+  </div>
+
+  <div class="latest__tabs js-latest-tabs">
+    {% for tab in tabsData.items %}
+      {% include 'components/tab-item.twig' with { tab: tab, active: tab.id == activeTabId } %}
+    {% endfor %}
+  </div>
+
+  <div class="latest__track js-latest-track">
+    {% for contract in contractsData.items %}
+      {% include 'components/contract-card.twig' with { contract: contract } %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,31 @@
+{# Tab Item molecule — one tab in LatestContracts #}
+{#
+@params: {
+  tab: { id, name, icon },
+  active?: boolean
+}
+#}
+<button
+  class="tab-item js-tab-item {% if active %}tab-item--active{% endif %}"
+  type="button"
+  data-tab-id="{{ tab.id }}"
+>
+  <span class="tab-item__icon">
+  
+    <img
+      class="tab-item__icon-img tab-item__icon-img--selected"
+      src="img/content/latest/selected/{{ tab.icon }}"
+      alt=""
+      width="22"
+      height="22"
+    >
+    <img
+      class="tab-item__icon-img tab-item__icon-img--unselected"
+      src="img/content/latest/unselected/{{ tab.icon }}"
+      alt=""
+      width="22"
+      height="22"
+    >
+  </span>
+  <span class="tab-item__text">{{ tab.name }}</span>
+</button>
