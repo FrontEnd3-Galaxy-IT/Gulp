@@ -1,0 +1,33 @@
+.search-page {
+  padding: 40px 0;
+
+  &__title {
+    margin-top: 30px;
+
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+
+    @include sm {
+      font-size: 38px;
+      line-height: 50px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    margin-top: 32px;
+  }
+
+  &__empty {
+    padding: 60px 0;
+
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+  }
+}

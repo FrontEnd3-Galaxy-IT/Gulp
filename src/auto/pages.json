@@ -6,5 +6,9 @@
   {
     "name": "email-example",
     "path": "./email-example.html"
+  },
+  {
+    "name": "search",
+    "path": "./search.html"
   }
 ]

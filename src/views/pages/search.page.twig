@@ -1,0 +1,35 @@
+{% extends 'layouts/main/layout-main.twig' %}
+
+{% block variables %}
+  {% set title = meta.title %}
+  {% set page_class = 'search-page-wrap' %}
+{% endblock variables %}
+
+{% block content %}
+
+  {% set contractsData = json('contracts') %}
+
+  <section class="search-page js-search-page">
+    <div class="container">
+      <h2 class="search-page__title">Search Result</h2>
+
+      <div class="search-page__grid js-search-grid">
+        {% for contract in contractsData.items %}
+          {% include 'components/contract-card.twig' with { contract: contract } %}
+        {% endfor %}
+      </div>
+
+      <p class="search-page__empty js-search-empty" style="display: none;">
+        No contracts found matching "<span class="js-search-query"></span>"
+      </p>
+    </div>
+  </section>
+{% endblock content %}
+
+{% block modals %}
+
+{% endblock modals %}
+
+{% block scripts %}
+
+{% endblock scripts %}

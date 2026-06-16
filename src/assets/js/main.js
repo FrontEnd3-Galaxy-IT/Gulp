@@ -2,6 +2,7 @@ import { convertLinkToTelPattern } from "./utils/tel-link"
 import { initSiteHeader } from "./modules/site-header"
 import { initSearchForm } from "./modules/search-form"
 import { initLatestContracts } from "./modules/latest-contracts"
+import { initSearchPage } from "./modules/search-page"
 
 /**
  * Show hidden elements as modals, popups, tooltips, etc.
@@ -18,4 +19,5 @@ window.addEventListener("load", async () => {
   initLatestContracts()
   initSiteHeader()
   initSearchForm()
+  initSearchPage()
 })
