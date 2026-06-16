@@ -1,9 +1,9 @@
-{# Primary btn #}
+{# Primary link (gradient styled button) #}
 {#
 @params: {
-  class: string,
-  href: string, - options '#'
-  inner: string
+  href: string,
+  inner: string,
+  class?: string
 }
 #}
 {% macro primary(params) %}
@@ -11,7 +11,23 @@
     class="btn primary-btn {{ params.class }}"
     href='{{ params.href ? params.href : '#' }}'
   >
-    {{ params.inner }}
+    {{ params.inner | raw }}
   </a>
 {% endmacro %}
-{# Primary btn end #}
+
+{# Nav link #}
+{#
+@params: {
+  inner: string,
+  href?: string,
+  class?: string
+}
+#}
+{% macro nav(params) %}
+  <a
+    class="nav-link {{ params.class }}"
+    {% if params.href %}href='{{ params.href }}'{% endif %}
+  >
+    {{ params.inner | raw }}
+  </a>
+{% endmacro %}

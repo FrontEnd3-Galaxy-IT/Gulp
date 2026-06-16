@@ -1,0 +1,22 @@
+{
+  "steps": [
+    {
+      "badge": "Step 1",
+      "title": "Search Contracts",
+      "description": "Search for other Business owners or individuals looking to create a contract or agreement.",
+      "image": "1.png"
+    },
+    {
+      "badge": "Step 2",
+      "title": "Apply For Agreement",
+      "description": "Establish what you and your party want to get out of this agreement.",
+      "image": "2.png"
+    },
+    {
+      "badge": "Step 3",
+      "title": "Agreement period",
+      "description": "Determine the length of your contract. All contracts can be saved to be reused.",
+      "image": "3.png"
+    }
+  ]
+}

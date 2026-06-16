@@ -1,0 +1,14 @@
+{# Badge atom #}
+{#
+@params: {
+  inner: string,
+  variant?: 'default' | 'verified' | 'info',
+  class?: string
+}
+#}
+{% macro render(params) %}
+  {% set variant = params.variant ? params.variant : 'default' %}
+  <span class="badge badge--{{ variant }} {{ params.class }}">
+    {{ params.inner | raw }}
+  </span>
+{% endmacro %}

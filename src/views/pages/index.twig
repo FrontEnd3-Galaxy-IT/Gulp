@@ -7,8 +7,10 @@
 
 {% block content %}
 
-  {{ include_module('home-page/hero') }}
-  {{ include_module('hero') }}
+
+  <div class="page-stack">
+    {% include 'modules/trusted.twig' with module_data('trusted') %}
+  </div>
 
 {% endblock content %}
 

@@ -7,19 +7,19 @@ items: [
   }
 ]
 #}
+{% import 'ui/buttons.twig' as btn %}
 
 <div class='tabs js-tabs {{ class }}'>
   <div class='tabs__head'>
     <div class='tabs__head-row'>
       {% for index, item in items %}
+        {% set tabId = index ~ '_' ~ item.title | striptags | lower | replace({' ': '_'}) %}
         <div class='tabs__head-col'>
-          <button
-            class="btn primary-btn tabs__btn js-tab-btn"
-            data-tab-id='{{ index ~ '_' ~ item.title | striptags | lower | replace({' ': '_'}) }}'
-            aria-label='{{ item.title | striptags }}'
-          >
-            {{ item.title }}
-          </button>
+          {{ btn.primary({
+            inner: item.title,
+            class: 'tabs__btn js-tab-btn',
+            attr: "data-tab-id='" ~ tabId ~ "' aria-label='" ~ (item.title | striptags) ~ "'"
+          }) }}
         </div>
       {% endfor %}
     </div>

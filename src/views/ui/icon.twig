@@ -1,0 +1,21 @@
+{# Icon atom — rounded background with image inside #}
+{#
+@params: {
+  src: string,
+  alt: string,
+  width: number,
+  height: number,
+  class?: string
+}
+#}
+{% macro render(params) %}
+  <div class="icon {{ params.class }}">
+    <img
+      src="{{ params.src }}"
+      alt="{{ params.alt }}"
+      width="{{ params.width }}"
+      height="{{ params.height }}"
+      loading="lazy"
+    >
+  </div>
+{% endmacro %}
